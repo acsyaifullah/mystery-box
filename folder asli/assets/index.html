@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>LibertyUI Premium Bootstrap Admin Dashboard Template</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_horizontal-navbar.html -->
+    <nav class="navbar horizontal-layout col-lg-12 col-12 p-0">
+      <div class="container d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-top">
+          <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo-inverse.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+          <form class="search-field" action="#">
+            <div class="form-group mb-0">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="mdi mdi-magnify"></i></span>
+                </div>
+                <input type="text" class="form-control">
+              </div>
+            </div>
+          </form>
+          <ul class="navbar-nav navbar-nav-right ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                <i class="mdi mdi-bell-outline"></i>
+                <span class="count bg-primary">4</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <a class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have 4 new notifications
+                  </p>
+                  <span class="badge badge-pill badge-inverse-info float-right">View all</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-inverse-success">
+                      <i class="mdi mdi-alert-circle-outline mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
+                    <p class="font-weight-light small-text mb-0">
+                      Just now
+                    </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-inverse-warning">
+                      <i class="mdi mdi-comment-text-outline mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
+                    <p class="font-weight-light small-text mb-0">
+                      Private message
+                    </p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-inverse-info">
+                      <i class="mdi mdi-email-outline mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
+                    <p class="font-weight-light small-text mb-0">
+                      2 days ago
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown d-none d-xl-inline-block">
+              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <span class="mr-3">Hello, Sebastian!</span><img class="img-xs rounded-circle" src="images/faces/face1.jpg" alt="Profile image">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <a class="dropdown-item p-0">
+                  <div class="d-flex border-bottom">
+                    <div class="py-3 px-4 d-flex align-items-center justify-content-center"><i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i></div>
+                    <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right"><i class="mdi mdi-account-outline mr-0 text-gray"></i></div>
+                    <div class="py-3 px-4 d-flex align-items-center justify-content-center"><i class="mdi mdi-alarm-check mr-0 text-gray"></i></div>
+                  </div>
+                </a>
+                <a class="dropdown-item mt-2">
+                  Manage Accounts
+                </a>
+                <a class="dropdown-item">
+                  Change Password
+                </a>
+                <a class="dropdown-item">
+                  Check Inbox
+                </a>
+                <a class="dropdown-item">
+                  Sign Out
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+        <div class="nav-bottom">
+          <ul class="nav page-navigation">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link"><i class="link-icon mdi mdi-television"></i><span class="menu-title">DASHBOARD</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="pages/widgets.html" class="nav-link"><i class="link-icon mdi mdi-apple-safari"></i><span class="menu-title">WIDGETS</span></a>
+            </li>
+            <li class="nav-item mega-menu">
+              <a href="#" class="nav-link"><i class="link-icon mdi mdi-atom"></i><span class="menu-title">UI ELEMENTS</span></a>
+              <div class="submenu">
+                <div class="col-group-wrapper row">
+                  <div class="col-group col-md-4">
+                    <div class="row">
+                      <div class="col-12">
+                        <p class="category-heading">Basic Elements</p>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="submenu-item">
+                          <li class="active"><a href="pages/ui-features/accordions.html">Accordion</a></li>
+                          <li><a href="pages/ui-features/buttons.html">Buttons</a></li>
+                          <li><a href="pages/ui-features/badges.html">Badges</a></li>
+                          <li><a href="pages/ui-features/breadcrumbs.html">Breadcrumbs</a></li>
+                          <li><a href="pages/ui-features/dropdowns.html">Dropdown</a></li>
+                          <li><a href="pages/ui-features/modals.html">Modals</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="submenu-item">
+                          <li><a href="pages/ui-features/progress.html">Progress bar</a></li>
+                          <li><a href="pages/ui-features/pagination.html">Pagination</a></li>
+                          <li><a href="pages/ui-features/tabs.html">Tabs</a></li>
+                          <li><a href="pages/ui-features/typography.html">Typography</a></li>
+                          <li><a href="pages/ui-features/tooltips.html">Tooltip</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-group col-md-4">
+                    <div class="row">
+                      <div class="col-12">
+                        <p class="category-heading">Advanced Elements</p>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="submenu-item">
+                          <li><a href="pages/ui-features/dragula.html">Dragula</a></li>
+                          <li><a href="pages/ui-features/carousel.html">Carousel</a></li>
+                          <li><a href="pages/ui-features/clipboard.html">Clipboard</a></li>
+                          <li><a href="pages/ui-features/context-menu.html">Context Menu</a></li>
+                          <li><a href="pages/ui-features/loaders.html">Loader</a></li>
+                          <li><a href="pages/ui-features/slider.html">Slider</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <ul class="submenu-item">
+                          <li><a href="pages/ui-features/tour.html">Tour</a></li>
+                          <li><a href="pages/ui-features/popups.html">Popup</a></li>
+                          <li><a href="pages/ui-features/notifications.html">Notification</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-group col-md-2">
+                    <p class="category-heading">Table</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/tables/basic-table.html">Basic Table</a></li>
+                      <li><a href="pages/tables/data-table.html">Data Table</a></li>
+                      <li><a href="pages/tables/js-grid.html">Js-grid</a></li>
+                      <li><a href="pages/tables/sortable-table.html">Sortable Table</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-group col-md-2">
+                    <p class="category-heading">Icons</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/icons/flag-icons.html">Flag Icons</a></li>
+                      <li><a href="pages/icons/font-awesome.html">Font Awesome</a></li>
+                      <li><a href="pages/icons/simple-line-icon.html">Simple Line Icons</a></li>
+                      <li><a href="pages/icons/themify.html">Themify Icons</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item mega-menu">
+              <a href="#" class="nav-link"><i class="link-icon mdi mdi-flag-outline"></i><span class="menu-title">PAGES</span></a>
+              <div class="submenu">
+                <div class="col-group-wrapper row">
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">User Pages</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/samples/login.html">Login</a></li>
+                      <li><a href="pages/samples/login-2.html">Login 2</a></li>
+                      <li><a href="pages/samples/register.html">Register</a></li>
+                      <li><a href="pages/samples/register-2.html">Register 2</a></li>
+                      <li><a href="pages/samples/lock-screen.html">Lockscreen</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">Error Pages</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/samples/error-400.html">400</a></li>
+                      <li><a href="pages/samples/error-404.html">404</a></li>
+                      <li><a href="pages/samples/error-500.html">500</a></li>
+                      <li><a href="pages/samples/error-505.html">505</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">E-commerce</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/samples/invoice.html">Invoice</a></li>
+                      <li><a href="pages/samples/pricing-table.html">Pricing Table</a></li>
+                      <li><a href="pages/samples/orders.html">Orders</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">Documentation</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/documentation.html">Documentation</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item mega-menu">
+              <a href="#" class="nav-link"><i class="link-icon mdi mdi-android-studio"></i><span class="menu-title">FORMS</span></a>
+              <div class="submenu">
+                <div class="col-group-wrapper row">
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">Basic Elements</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                      <li><a href="pages/forms/advanced_elements.html">Advanced Elements</a></li>
+                      <li><a href="pages/forms/validation.html">Validation</a></li>
+                      <li><a href="pages/forms/wizard.html">Wizard</a></li>
+                      <li><a href="pages/forms/text_editor.html">Text Editor</a></li>
+                      <li><a href="pages/forms/code_editor.html">Code Editor</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">Charts</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/charts/chartjs.html">Chart Js</a></li>
+                      <li><a href="pages/charts/morris.html">Morris</a></li>
+                      <li><a href="pages/charts/flot-chart.html">Flaot</a></li>
+                      <li><a href="pages/charts/google-charts.html">Google Chart</a></li>
+                      <li><a href="pages/charts/sparkline.html">Sparkline</a></li>
+                      <li><a href="pages/charts/c3.html">C3 Chart</a></li>
+                      <li><a href="pages/charts/chartist.html">Chartist</a></li>
+                      <li><a href="pages/charts/justGage.html">JustGage</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-group col-md-3">
+                    <p class="category-heading">Maps</p>
+                    <ul class="submenu-item">
+                      <li><a href="pages/maps/mapeal.html">Mapeal</a></li>
+                      <li><a href="pages/maps/vector-map.html">Vector Map</a></li>
+                      <li><a href="pages/maps/google-maps.html">Google Map</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link"><i class="link-icon mdi mdi-asterisk"></i><span class="menu-title">APPS</span></a>
+              <div class="submenu">
+                <ul class="submenu-item">
+                  <li><a href="pages/apps/email.html">Email</a></li>
+                  <li><a href="pages/apps/calendar.html">Calendar</a></li>
+                  <li><a href="pages/apps/todo.html">Todo List</a></li>
+                  <li><a href="pages/apps/gallery.html">Gallery</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close mdi mdi-close"></i>
+          <div class="d-flex align-items-center justify-content-between border-bottom">
+            <p class="settings-heading font-weight-bold border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Template Skins</p>
+          </div>
+          <div class="sidebar-bg-options selected" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <div class="sidebar-bg-options" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <p class="settings-heading font-weight-bold mt-2">Header Skins</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles primary"></div>
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles pink"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close mdi mdi-close"></i>
+        <div class="d-flex align-items-center justify-content-between border-bottom">
+          <p class="settings-heading font-weight-bold border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+        </div>
+        <ul class="chat-list">
+          <li class="list active">
+            <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+            <div class="info">
+              <p>Thomas Douglas</p>
+              <p>Available</p>
+            </div>
+            <small class="text-muted my-auto">19 min</small>
+          </li>
+          <li class="list">
+            <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+            <div class="info">
+              <div class="wrapper d-flex">
+                <p>Catherine</p>
+              </div>
+              <p>Away</p>
+            </div>
+            <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+            <small class="text-muted my-auto">23 min</small>
+          </li>
+          <li class="list">
+            <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+            <div class="info">
+              <p>Daniel Russell</p>
+              <p>Available</p>
+            </div>
+            <small class="text-muted my-auto">14 min</small>
+          </li>
+          <li class="list">
+            <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+            <div class="info">
+              <p>James Richardson</p>
+              <p>Away</p>
+            </div>
+            <small class="text-muted my-auto">2 min</small>
+          </li>
+          <li class="list">
+            <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+            <div class="info">
+              <p>Madeline Kennedy</p>
+              <p>Available</p>
+            </div>
+            <small class="text-muted my-auto">5 min</small>
+          </li>
+          <li class="list">
+            <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+            <div class="info">
+              <p>Sarah Graves</p>
+              <p>Available</p>
+            </div>
+            <small class="text-muted my-auto">47 min</small>
+          </li>
+        </ul>
+      </div>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card card-statistics">
+                <div class="row">
+                  <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-account-multiple-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <p class="card-text mb-0">New Users</p>
+                            <div class="fluid-container">
+                              <h3 class="card-title mb-0">65,650</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-checkbox-marked-circle-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <p class="card-text mb-0">New Feedbacks</p>
+                            <div class="fluid-container">
+                              <h3 class="card-title mb-0">32,604</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-trophy-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <p class="card-text mb-0">Employees</p>
+                            <div class="fluid-container">
+                              <h3 class="card-title mb-0">17,583</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                          <i class="mdi mdi-target text-primary mr-0 mr-sm-4 icon-lg"></i>
+                          <div class="wrapper text-center text-sm-left">
+                            <p class="card-text mb-0">Total Sales</p>
+                            <div class="fluid-container">
+                              <h3 class="card-title mb-0">61,119</h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-6 grid-margin stretch-card">
+							<div class="card text-center">
+								<div class="card-body">
+									<img src="images/faces/face5.jpg" class="img-lg rounded-circle mb-2" alt="profile image"/>
+									<h4>Maria Johnson</h4>
+									<p class="text-muted">Developer</p>
+									<p class="mt-4 card-text">
+											Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+											Aenean commodo ligula eget dolor. Lorem
+									</p>
+									<button class="btn btn-info btn-sm mt-3 mb-4">Follow</button>
+									<div class="border-top pt-3">
+										<div class="row">
+											<div class="col-4">
+												<h6>5896</h6>
+												<p>Post</p>
+											</div>
+											<div class="col-4">
+												<h6>1596</h6>
+												<p>Followers</p>
+											</div>
+											<div class="col-4">
+												<h6>7896</h6>
+												<p>Likes</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+            <div class="col-md-4 col-sm-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body pb-0">
+                  <div class="wrapper border-bottom">
+                    <h5 class="mb-0 text-gray">Top Products</h5>
+                    <h1 class="mb-0">598,486</h1>
+                    <p class="mb-4">6.5% change from today</p>
+                  </div>
+                  <div class="pt-4 wrapper">
+                    <h5 class="mb-0 text-gray">Support Cases</h5>
+                    <h1 class="mb-0">323,360</h1>
+                    <p>2.5% change from yesterday</p>
+                  </div>
+                </div>
+                <canvas id="product-area-chart" height="200"></canvas>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="w-75 mx-auto">
+                    <div class="d-flex justify-content-between text-center mb-2">
+                      <div class="wrapper">
+                        <h4>6,256</h4>
+                        <small class="text-muted">Total sales</small>
+                      </div>
+                      <div class="wrapper">
+                        <h4>8569</h4>
+                        <small class="text-muted">Open Campaign</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="morris-line-example" style="height:250px;"></div>
+                  <div class="w-75 mx-auto">
+                    <div class="d-flex justify-content-between text-center mt-5">
+                      <div class="wrapper">
+                        <h4>5136</h4>
+                        <small class="text-muted">Online Sales</small>
+                      </div>
+                      <div class="wrapper">
+                        <h4>4596</h4>
+                        <small class="text-muted">Store Sales</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="table-responsive">
+                  <table class="table center-aligned-table">
+                    <thead>
+                      <tr class="bg-light">
+                        <th class="border-bottom-0">ID</th>
+                        <th class="border-bottom-0">Assignee</th>
+                        <th class="border-bottom-0">Task Details</th>
+                        <th class="border-bottom-0">Payment Method</th>
+                        <th class="border-bottom-0">Payment Status</th>
+                        <th class="border-bottom-0">Amount</th>
+                        <th class="border-bottom-0">Tracking Number</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#320</td>
+                        <td>Mark C.Diaz</td>
+                        <td>Support of thteme</td>
+                        <td>Credit card</td>
+                        <td><label class="badge badge-info">Approved</label></td>
+                        <td>$12,245</td>
+                        <td>JPBBN435893458</td>
+                      </tr>
+                      <tr>
+                        <td>#321</td>
+                        <td>Jose D</td>
+                        <td>Verify your email address !</td>
+                        <td>Internet banking</td>
+                        <td><label class="badge badge-primary">Pending</label></td>
+                        <td>$12,245</td>
+                        <td>BDYBN435893325</td>
+                      </tr>
+                      <tr>
+                        <td>#322</td>
+                        <td>Philips T</td>
+                        <td>Item support message send</td>
+                        <td>Credit card</td>
+                        <td><label class="badge badge-info">Approved</label></td>
+                        <td>$12,245</td>
+                        <td>JSNTN435884258</td>
+                      </tr>
+                      <tr>
+                        <td>#323</td>
+                        <td>Luke Pixel</td>
+                        <td>New submission on website</td>
+                        <td>Cash on delivery</td>
+                        <td><label class="badge badge-danger">Rejected</label></td>
+                        <td>$12,245</td>
+                        <td>JPABT435893678</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body pb-0">
+                  <h5 class="card-title mb-4">Order Status</h5>
+                  <div class="row mb-5">
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <div class="d-flex">
+                        <h2 class="mb-0">5675</h2>
+                        <i class="mdi mdi-arrow-up h2 mb-0 text-success"></i>
+                      </div>
+                      <p>Daily Order</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <div class="d-flex">
+                        <h2 class="mb-0">7841</h2>
+                        <i class="mdi mdi-arrow-up h2 mb-0 text-success"></i>
+                      </div>
+                      <p>Tasks Completed</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <div class="d-flex">
+                        <h2 class="mb-0">6521</h2>
+                        <i class="mdi mdi-arrow-down h2 mb-0 text-danger"></i>
+                      </div>
+                      <p>Monthly Sales</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-6">
+                      <div class="d-flex">
+                        <h2 class="mb-0">8954</h2>
+                        <i class="mdi mdi-arrow-up h2 mb-0 text-success"></i>
+                      </div>
+                      <p>Total Revenue</p>
+                    </div>
+                  </div>
+                </div>
+                <canvas id="dashoard-area-chart" height="200"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h5 class="card-title mb-0">New Accounts</h5>
+                    <small class="text-gray d-none d-sm-block">Last activity was 2 days ago</small>
+                  </div>
+                  <div class="new-accounts">
+                    <ul class="chats">
+                      <li class="chat-persons">
+                        <a href="#">
+                          <span class="pro-pic"><img src="images/faces/face1.jpg" alt="profile image"></span>
+                          <div class="user">
+                            <p class="u-name">David</p>
+                            <p class="u-designation">Python Developer</p>
+                          </div>
+                          <p class="joined-date">30 Mins ago</p>
+                        </a>
+                      </li>
+                      <!-- list person -->
+                      <li class="chat-persons">
+                        <a href="#">
+                          <span class="pro-pic"><img src="images/faces/face2.jpg" alt="profile image"></span>
+                          <div class="user">
+                            <p class="u-name">Stella Johnson</p>
+                            <p class="u-designation">SEO Expert</p>
+                          </div>
+                          <p class="joined-date">2 Days ago</p>
+                        </a>
+                      </li>
+                      <!-- list person -->
+                      <li class="chat-persons">
+                        <a href="#">
+                          <span class="pro-pic"><img src="images/faces/face23.jpg" alt="profile image"></span>
+                          <div class="user">
+                            <p class="u-name">Marina Michel</p>
+                            <p class="u-designation">Business Development</p>
+                          </div>
+                          <p class="joined-date">4 Days ago</p>
+                        </a>
+                      </li>
+                      <!-- list person -->
+                      <li class="chat-persons">
+                        <a href="#">
+                          <span class="pro-pic"><img src="images/faces/face14.jpg" alt="profile image"></span>
+                          <div class="user">
+                            <p class="u-name">Allen Donald</p>
+                            <p class="u-designation">UI/UX Designer</p>
+                          </div>
+                          <p class="joined-date">5 Days ago</p>
+                        </a>
+                      </li>
+                      <!-- list person -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="card-title mb-0">To-do list</h5>
+                    <i class="btn-action mdi mdi-dots-horizontal text-muted icon-md"></i>
+                  </div>
+                  <div class="todo-list-container">
+  									<div class="list-wrapper">
+  										<ul class="todo-list">
+                        <li class="list">
+                          <div class="form-check form-check-flat todo-form-check w-100">
+                            <div class="form-check-label">
+                              <input type="checkbox" class="form-check-input">
+                              <i class="input-helper"></i>
+                              <div class="d-flex">
+                                <div class="wrapper todo-content">
+                                  <h6 class="mb-1 ellipsis">Anyways i would like just do it</h6>
+                                  <p class="text-gray mb-0 ellipsor">15:00 PM Mon, 14 Jan 2018</p>
+                                  <p class="text-muted mb-0 ellipsor"> 7 months ago</p>
+                                </div>
+                                <div class="action-wrapper wrapper ml-auto d-flex align-items-center">
+                                  <i class="btn-close mdi mdi-close-circle-outline text-primary icon-md"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list">
+                          <div class="form-check form-check-flat todo-form-check w-100">
+                            <div class="form-check-label">
+                              <input type="checkbox" class="form-check-input" checked>
+                              <i class="input-helper"></i>
+                              <div class="d-flex">
+                                <div class="wrapper todo-content">
+                                  <h6 class="mb-1 ellipsis">Make an appointment with Doctor</h6>
+                                  <p class="text-gray mb-0 ellipsor">10:00 PM Sat, 10 Jan 2018</p>
+                                  <p class="text-muted mb-0 ellipsor"> 7 months ago</p>
+                                </div>
+                                <div class="action-wrapper wrapper ml-auto d-flex align-items-center">
+                                  <i class="btn-close mdi mdi-close-circle-outline text-primary icon-md"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="list">
+                          <div class="form-check form-check-flat todo-form-check w-100">
+                            <div class="form-check-label">
+                              <input type="checkbox" class="form-check-input">
+                              <i class="input-helper"></i>
+                              <div class="d-flex">
+                                <div class="wrapper todo-content">
+                                  <h6 class="mb-1 ellipsis">Please Checkout The Attachment</h6>
+                                  <p class="text-gray mb-0 ellipsor">03:00 PM Sat, 13 Jan 2018</p>
+                                  <p class="text-muted mb-0 ellipsor"> 7 months ago</p>
+                                </div>
+                                <div class="action-wrapper wrapper ml-auto d-flex align-items-center">
+                                  <i class="btn-close mdi mdi-close-circle-outline text-primary icon-md"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+  										</ul>
+  									</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">The Current Chart</h5>
+                  <canvas id="current-chart" height="100"></canvas>
+                </div>
+                <div class="border-top py-4 px-4">
+                  <p class="mb-0 text-gray">Projects Status</p>
+                  <div class="d-flex align-items-end">
+                    <h2 class="mb-0 display-2 font-weight-semibold">76,533</h2>
+                    <p class="mb-2 ml-1">PCS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Updates</h5>
+									<ul class="bullet-line-list">
+										<li>
+											<h6>User confirmation</h6>
+											<p class="mb-0">Donec rutrum congue leo eget malesuada.</p>
+											<p class="text-muted">
+												<i class="mdi mdi-clock"></i>
+												7 months ago.
+											</p>
+										</li>
+										<li>
+											<h6>Continuous evaluation</h6>
+											<p class="mb-0">Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+											<p class="text-muted">
+												<i class="mdi mdi-clock"></i>
+												7 months ago.
+											</p>
+										</li>
+										<li>
+											<h6>Promotion</h6>
+											<p class="mb-0">Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>
+											<p class="text-muted">
+												<i class="mdi mdi-clock"></i>
+												7 months ago.
+											</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+          </div>
+          <div class="row">
+            <div class="col-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">Manage Tickets</h5>
+                  <div class="fluid-container">
+                    <div class="row ticket-card mt-3 pb-2 border-bottom pb-3 mb-3">
+                      <div class="col-md-1">
+                        <img class="img-sm rounded-circle mb-4 mb-md-0" src="images/faces/face1.jpg" alt="profile image">
+                      </div>
+                      <div class="ticket-details col-md-9">
+                        <div class="d-flex">
+                          <p class="text-dark font-weight-bold mr-2 mb-0 no-wrap">James :</p>
+                          <p class="font-weight-medium mr-1 mb-0">[#23047]</p>
+                          <p class="font-weight-semibold mb-0 ellipsis">Donec rutrum congue leo eget malesuada.</p>
+                        </div>
+                        <p class="text-small text-gray mb-2">Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim vivamus.</p>
+                        <div class="row text-gray d-md-flex d-none">
+                          <div class="col-4 d-flex">
+                            <p class="mb-0 mr-2 text-muted text-muted">Last responded :</p>
+                            <p class="Last-responded mr-2 mb-0 text-muted text-muted">3 hours ago</p>
+                          </div>
+                          <div class="col-4 d-flex">
+                            <p class="mb-0 mr-2 text-muted text-muted">Due in :</p>
+                            <p class="Last-responded mr-2 mb-0 text-muted text-muted">2 Days</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ticket-actions col-md-2">
+                        <div class="btn-group dropdown">
+                          <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Manage
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-reply fa-fw"></i>Quick reply</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-history fa-fw"></i>Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row ticket-card mt-3 pb-2 border-bottom pb-3 mb-3">
+                      <div class="col-md-1">
+                        <img class="img-sm rounded-circle mb-4 mb-md-0" src="images/faces/face2.jpg" alt="profile image">
+                      </div>
+                      <div class="ticket-details col-md-9">
+                        <div class="d-flex">
+                          <p class="text-dark font-weight-bold mr-2 mb-0 no-wrap">Stella :</p>
+                          <p class="font-weight-medium mr-1 mb-0">[#23135]</p>
+                          <p class="font-weight-semibold mb-0 ellipsis">Curabitur aliquet quam id dui posuere blandit.</p>
+                        </div>
+                        <p class="text-small text-gray mb-2">Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl.</p>
+                        <div class="row text-gray d-md-flex d-none">
+                          <div class="col-4 d-flex">
+                            <p class="mb-0 mr-2 text-muted">Last responded :</p>
+                            <p class="Last-responded mr-2 mb-0 text-muted">3 hours ago</p>
+                          </div>
+                          <div class="col-4 d-flex">
+                            <p class="mb-0 mr-2 text-muted">Due in :</p>
+                            <p class="Last-responded mr-2 mb-0 text-muted">2 Days</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ticket-actions col-md-2">
+                        <div class="btn-group dropdown">
+                          <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Manage
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-reply fa-fw"></i>Quick reply</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-history fa-fw"></i>Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row ticket-card mt-3">
+                      <div class="col-md-1">
+                        <img class="img-sm rounded-circle mb-4 mb-md-0" src="images/faces/face3.jpg" alt="profile image">
+                      </div>
+                      <div class="ticket-details col-md-9">
+                        <div class="d-flex">
+                          <p class="text-dark font-weight-bold mr-2 mb-0 no-wrap">John Doe :</p>
+                          <p class="font-weight-medium mr-1 mb-0">[#23246]</p>
+                          <p class="font-weight-semibold mb-0 ellipsis">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
+                        </div>
+                        <p class="text-small text-gray mb-2">Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Lorem ipsum dolor sit amet.</p>
+                        <div class="row text-gray d-md-flex d-none">
+                          <div class="col-4 d-flex">
+                            <p class="mb-0 mr-2 text-muted">Last responded :</p>
+                            <p class="Last-responded mr-2 mb-0 text-muted">3 hours ago</p>
+                          </div>
+                          <div class="col-4 d-flex">
+                            <p class="mb-0 mr-2 text-muted">Due in :</p>
+                            <p class="Last-responded mr-2 mb-0 text-muted">2 Days</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ticket-actions col-md-2">
+                        <div class="btn-group dropdown">
+                          <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Manage
+                          </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#"><i class="fa fa-reply fa-fw"></i>Quick reply</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-history fa-fw"></i>Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="fa fa-check text-success fa-fw"></i>Resolve Issue</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-times text-danger fa-fw"></i>Close Issue</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="http://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
