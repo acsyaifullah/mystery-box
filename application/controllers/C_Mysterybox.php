@@ -111,7 +111,7 @@ class C_Mysterybox extends CI_Controller
 	}
 	// END MG --------------------------------------------
 	
-	// START PTC --------------------------------------------
+	// START SPM --------------------------------------------
 	public function indexSPM()
 	{
 		$data['hadiah'] = $this->db->order_by('idhadiah', 'RANDOM')->get('tb_hadiah_spm')->result_array();
@@ -211,32 +211,32 @@ class C_Mysterybox extends CI_Controller
 		$data['hadiah'] = $this->db->get('tb_hadiah_spm')->result();
 		redirect('/C_Mysterybox/listHadiahSPM');
 	}
-	// END PTC --------------------------------------------
+	// END SPM --------------------------------------------
 
 	// START BLT --------------------------------------------
 	public function indexBLT()
 	{
-		$data['hadiah'] = $this->db->order_by('idhadiah', 'RANDOM')->get('tb_hadiah_spm')->result_array();
-		$this->load->view('V_MysteryboxSPM', $data);
+		$data['hadiah'] = $this->db->order_by('idhadiah', 'RANDOM')->get('tb_hadiah_blt')->result_array();
+		$this->load->view('V_MysteryboxBLT', $data);
 	}
 
 	public function getHadiahBLT()
 	{
 		$id 	= $_POST['id'];
-		$data	= $this->db->get_where('tb_hadiah_spm', ['idhadiah' => $id])->row();
+		$data	= $this->db->get_where('tb_hadiah_blt', ['idhadiah' => $id])->row();
 		echo json_encode($data);
 	}
 
 	public function minKuotaBLT()
 	{
 		$id 	= $_POST['id'];
-		$this->db->set('jumlah', 'jumlah-1', FALSE)->where('idhadiah', $id)->update('tb_hadiah_spm');
+		$this->db->set('jumlah', 'jumlah-1', FALSE)->where('idhadiah', $id)->update('tb_hadiah_blt');
 	}
 
 	public function listHadiahBLT()
 	{
-		$data['hadiah'] = $this->db->get('tb_hadiah_spm')->result();
-		$this->load->view('V_ListHadiahSPM', $data);
+		$data['hadiah'] = $this->db->get('tb_hadiah_blt')->result();
+		$this->load->view('V_ListHadiahBLT', $data);
 	}
 
 	public function addHadiahBLT()
@@ -263,8 +263,8 @@ class C_Mysterybox extends CI_Controller
 			$this->mod->addHadiahBLT($data);
 		}
 
-		$data2['hadiah'] = $this->db->get('tb_hadiah_spm')->result();
-		$this->load->view('V_ListHadiahSPM', $data2);
+		$data2['hadiah'] = $this->db->get('tb_hadiah_blt')->result();
+		$this->load->view('V_ListHadiahBLT', $data2);
 	}
 
 	public function updHadiahBLT()
@@ -289,7 +289,7 @@ class C_Mysterybox extends CI_Controller
 					'jumlah' 		=> $_POST['jumlah'],
 					'gambar' 		=> $gambar['gambar']['file_name']];
 
-			$query = $this->db->where('idhadiah', $data['idhadiah'])->get('tb_hadiah_spm')->row();
+			$query = $this->db->where('idhadiah', $data['idhadiah'])->get('tb_hadiah_blt')->row();
 			if ($query->gambar != 'mb.png') {
 				unlink("./assets/images/hadiah/$query->gambar");
 			}
@@ -297,21 +297,21 @@ class C_Mysterybox extends CI_Controller
 			$this->mod->updHadiahBLT($data);
 		}
 
-		$data2['hadiah'] = $this->db->get('tb_hadiah_spm')->result();
-		$this->load->view('V_ListHadiahSPM', $data2);
+		$data2['hadiah'] = $this->db->get('tb_hadiah_blt')->result();
+		$this->load->view('V_ListHadiahBLT', $data2);
 	}
 
 	public function delHadiahBLT($id)
 	{
-		$query = $this->db->get_where('tb_hadiah_spm', ['idhadiah' => $id])->row();
+		$query = $this->db->get_where('tb_hadiah_blt', ['idhadiah' => $id])->row();
 		if ($query->gambar != 'mb.png') {
 			unlink("./assets/images/hadiah/$query->gambar");
 		}
 
 		$this->mod->delHadiahBLT($id);
 
-		$data['hadiah'] = $this->db->get('tb_hadiah_spm')->result();
-		redirect('/C_Mysterybox/listHadiahSPM');
+		$data['hadiah'] = $this->db->get('tb_hadiah_blt')->result();
+		redirect('/C_Mysterybox/listHadiahBLT');
 	}
 	// END BLT --------------------------------------------
 
