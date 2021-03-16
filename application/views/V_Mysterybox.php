@@ -38,7 +38,7 @@
     body {
       background: url("<?php echo base_url(); ?>/assets/images/hadiah/bg.png") no-repeat center center fixed;
       -webkit-background-size: cover;
-      /*-moz-background-size: cover;*/
+      -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     }
@@ -54,7 +54,10 @@
       <!-- partial:assets/partials/_settings-panel.html -->
       
       <div class="main-panel">
-        <div class="content-wrapper" style="padding-top: 150px;">
+        <div align="center" style="padding-top: 0px">
+          <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+        <div class="content-wrapper" style="padding-top: 100px;">
           <div class="row">
 
             <?php 

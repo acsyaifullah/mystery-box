@@ -182,12 +182,14 @@
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">UBAH HADIAH</h4>
+                  <h5 class="modal-title">UBAH HADIAH</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
               </div>
               <form id="formUpdHadiah">
               <div class="modal-body">
-                    <input type="hidden" name="idpaket" class="idhadiah">
+                    <input type="hidden" name="idhadiah" class="idhadiah">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
@@ -202,19 +204,21 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <label class="control-label">Gambar</label>
                         <div class="form-group">
-                          <img class="gambar" width="200px">
+                          <label class="control-label">Gambar</label>
+                          <img class="gambar" width="150px">
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <label>Gambar Hadiah</label>
-                        <input type="file" name="gambar" id="gambar" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-default" type="button">Browse</button>
-                          </span>
+                        <div class="form-group">
+                          <label class="control-label">Gambar Hadiah</label>
+                          <input type="file" name="gambar" id="gambar" class="file-upload-default">
+                          <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                            <span class="input-group-append">
+                              <button class="file-upload-browse btn btn-default" type="button">Browse</button>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -245,6 +249,32 @@
               success     : function(data) {
                   $('#showHadiah').html(data);
                   $('#addHadiah').modal('hide');
+                  $('.form-control').val("");
+              }
+          });
+      });
+
+      // AJAX EDIT PAKET
+      $(document).on("click", '.upd', function() {
+          $(".idhadiah").val($(this).data('idhadiah'));
+          $(".nama_hadiah").val($(this).data('namahadiah'));
+          $(".jumlah").val($(this).data('jumlah'));
+          $(".gambar").attr('src', '<?php echo base_url("assets/images/hadiah/") ?>'+$(this).data('gambar'));
+      });
+
+      $('#formUpdHadiah').submit(function(e){
+          e.preventDefault();
+          $.ajax({
+              url         : '<?php echo base_url('C_Mysterybox/updHadiahMG') ?>',
+              type        : 'POST',
+              data        : new FormData(this),
+              processData : false,
+              contentType : false,
+              cache       : false,
+              async       : false,        
+              success     : function(data) {
+                  $('#showHadiah').html(data);
+                  $('#updHadiah').modal('hide');
                   $('.form-control').val("");
               }
           });

@@ -27,6 +27,21 @@
     .swal2-content {
       font-size: 25px!important;
     }
+    .card {
+      min-height: 287px;
+      border: none;
+      background-color: transparent;
+    }
+    .page-body-wrapper {
+       background-color: transparent;!important;
+    }
+    body {
+      background: url("<?php echo base_url(); ?>/assets/images/hadiah/bg.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
   </style>
 </head>
 
@@ -39,8 +54,11 @@
       <!-- partial:assets/partials/_settings-panel.html -->
       
       <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row" style="margin-top: 25px;">
+        <div align="center" style="padding-top: 0px">
+          <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+        <div class="content-wrapper" style="padding-top: 100px;">
+          <div class="row">
 
             <?php 
               foreach ($hadiah as $value) { 
@@ -49,14 +67,14 @@
             ?>
             
             <div class="col-md-3 col-sm-6 grid-margin">
-              <div class="card" style="min-height: 287px">
+              <div class="card">
                 <div class="card-body">
                   <div class="row">
                     
                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                       <div class="wrapper text-center">
                         <!-- <h4 class="card-title">Pilih Mystery Gift !</h4> -->
-                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="150px" id="mb<?php echo $value['idhadiah'] ?>"></p>
+                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $value['idhadiah'] ?>"></p>
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
                         <span id="span<?php echo $value['idhadiah'] ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>')" id="btn<?php echo $value['idhadiah'] ?>">Buka Box !</button></span>
                       </div>
@@ -76,12 +94,12 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:assets/partials/_footer.html -->
-        <footer class="footer">
+        <!-- <footer class="footer">
           <div class="container-fluid clearfix">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a style="color: #ff7474" href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahSPM">The Emdee Skin Clinic</a>.</span>
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a style="color: #ff7474" href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG">The Emdee Skin Clinic</a>.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made seriously with <i class="mdi mdi-heart text-danger"></i></span>
           </div>
-        </footer>
+        </footer> -->
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -97,7 +115,7 @@
             method  : 'POST',
             dataType: 'json',
             data    : {id : id},
-            url     : "<?php echo base_url('C_Mysterybox/getHadiahSPM'); ?>",
+            url     : "<?php echo base_url('C_Mysterybox/getHadiah'); ?>",
             success : function(prize) {
               if (prize.jumlah > 0) {
                 Swal.fire({
@@ -115,6 +133,7 @@
                     $("#span"+prize.idhadiah).append('<h4>'+prize.nama_hadiah+'</h4>');
                   }
                 });
+                minKuota(prize.idhadiah);
               } else {
                 Swal.fire({
                   title: 'Yaah, Hadiah ini habis ...',
@@ -133,6 +152,31 @@
                 });
               }
             }
+        });
+
+        // Swal.fire({
+        //   title: 'Yeay, kamu dapat ...',
+        //   text: 'Calmiderm Mask',
+        //   imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/calmiderm-mask.jpg',
+        //   imageWidth: 250,
+        //   imageHeight: 250,
+        //   confirmButtonColor: '#3085d6',
+        //   confirmButtonText: 'Ok'
+        // }).then((result) => {
+        //   if (result.isConfirmed) {
+        //     $("#mb1").attr('src','<?php echo base_url(); ?>/assets/images/hadiah/calmiderm-mask.jpg');
+        //     $("#btn1").hide();
+        //     $("#span1").append('<h4>Calmiderm Mask</h4>');
+        //   }
+        // });
+      }
+
+      function minKuota(id) {
+        var id = id;
+        $.ajax({
+          method  : 'POST',
+          data    : {id:id},
+          url     : "<?php echo base_url('C_Mysterybox/minKuotaMG'); ?>"
         });
       }
   </script>
