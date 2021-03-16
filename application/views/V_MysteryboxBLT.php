@@ -55,7 +55,7 @@
       
       <div class="main-panel">
         <div align="center" style="padding-top: 0px">
-          <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahSPM" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahBLT" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
         <div class="content-wrapper" style="padding-top: 100px;">
           <div class="row">
@@ -115,7 +115,7 @@
             method  : 'POST',
             dataType: 'json',
             data    : {id : id},
-            url     : "<?php echo base_url('C_Mysterybox/getHadiahSPM'); ?>",
+            url     : "<?php echo base_url('C_Mysterybox/getHadiahBLT'); ?>",
             success : function(prize) {
               if (prize.jumlah > 0) {
                 Swal.fire({
@@ -176,7 +176,7 @@
         $.ajax({
           method  : 'POST',
           data    : {id:id},
-          url     : "<?php echo base_url('C_Mysterybox/minKuotaSPM'); ?>"
+          url     : "<?php echo base_url('C_Mysterybox/minKuotaBLT'); ?>"
         });
       }
   </script>
