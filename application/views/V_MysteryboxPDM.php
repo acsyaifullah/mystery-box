@@ -55,7 +55,7 @@
       
       <div class="main-panel">
         <div align="center" style="padding-top: 0px">
-          <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahSPM" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahPDM" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
         <div class="content-wrapper" style="padding-top: 100px;">
           <div class="row">
@@ -75,7 +75,7 @@
                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                       <div class="wrapper text-center">
                         <!-- <h4 class="card-title">Pilih Mystery Gift !</h4> -->
-                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/SPM/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p>
+                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/PDM/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p>
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
                         <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span>
                       </div>
@@ -116,20 +116,20 @@
             method  : 'POST',
             dataType: 'json',
             data    : {id : id},
-            url     : "<?php echo base_url('C_Mysterybox/getHadiahSPM'); ?>",
+            url     : "<?php echo base_url('C_Mysterybox/getHadiahPDM'); ?>",
             success : function(prize) {
               if (prize.jumlah > 0) {
                 Swal.fire({
                   title: 'Selamat Emdeers, kamu dapat ...',
                   text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/'+prize.gambar,
+                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/PDM/'+prize.gambar,
                   imageWidth: 250,
                   imageHeight: 250,
                   confirmButtonColor: '#3085d6',
                   confirmButtonText: 'Ok'
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/SPM/'+prize.gambar);
+                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/PDM/'+prize.gambar);
                     $("#btn"+randRow).hide();
                     $("#span"+randRow).append('<h4>'+prize.nama_hadiah+'</h4>');
                   }
@@ -140,14 +140,14 @@
                 Swal.fire({
                   title: 'Yaah, Hadiah ini habis ...',
                   text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/mb.png',
+                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/PDM/mb.png',
                   imageWidth: 250,
                   imageHeight: 250,
                   confirmButtonColor: '#3085d6',
                   confirmButtonText: 'Ok'
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/SPM/mb.png');
+                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/PDM/mb.png');
                     $("#btn"+randRow).hide();
                     $("#span"+randRow).append('<h4>Hadiah ini habis</h4>');
                   }
@@ -178,7 +178,7 @@
         $.ajax({
           method  : 'POST',
           data    : {id:id},
-          url     : "<?php echo base_url('C_Mysterybox/minKuotaSPM'); ?>"
+          url     : "<?php echo base_url('C_Mysterybox/minKuotaPDM'); ?>"
         });
       }
   </script>

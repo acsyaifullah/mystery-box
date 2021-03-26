@@ -72,7 +72,7 @@
                             ?>
                           </td>
                           <td><?php echo $value->jumlah ?></td>
-                          <td><img class="imghadiah" src="<?php echo base_url('/assets/images/hadiah/SPM/'.$value->gambar); ?>"></td>
+                          <td><img class="imghadiah" src="<?php echo base_url('/assets/images/hadiah/ALS/'.$value->gambar); ?>"></td>
                           <td>
                             <a style="color: black" class="btn btn-warning upd" data-toggle="modal" data-target="#updHadiah"
                             data-idhadiah="<?php echo $value->idhadiah; ?>"
@@ -80,7 +80,7 @@
                             data-jumlah="<?php echo $value->jumlah; ?>"
                             data-gambar="<?php echo $value->gambar; ?>">
                             Ubah</a>
-                            <a style="color: black" href="<?php echo base_url('C_Mysterybox/delHadiahSPM/'.$value->idhadiah); ?>" class="btn btn-danger">Hapus</a>
+                            <a style="color: black" href="<?php echo base_url('C_Mysterybox/delHadiahALS/'.$value->idhadiah); ?>" class="btn btn-danger">Hapus</a>
                           </td>
                       </tr>
                       <?php } ?>
@@ -239,7 +239,7 @@
       $('#formAddHadiah').submit(function(e) {
           e.preventDefault();
           $.ajax({
-              url         : '<?php echo base_url('C_Mysterybox/addHadiahSPM') ?>',
+              url         : '<?php echo base_url('C_Mysterybox/addHadiahALS') ?>',
               type        : 'POST',
               data        : new FormData(this),
               processData : false,
@@ -259,13 +259,13 @@
           $(".idhadiah").val($(this).data('idhadiah'));
           $(".nama_hadiah").val($(this).data('namahadiah'));
           $(".jumlah").val($(this).data('jumlah'));
-          $(".gambar").attr('src', '<?php echo base_url("assets/images/hadiah/SPM/") ?>'+$(this).data('gambar'));
+          $(".gambar").attr('src', '<?php echo base_url("assets/images/hadiah/ALS/") ?>'+$(this).data('gambar'));
       });
 
       $('#formUpdHadiah').submit(function(e){
           e.preventDefault();
           $.ajax({
-              url         : '<?php echo base_url('C_Mysterybox/updHadiahSPM') ?>',
+              url         : '<?php echo base_url('C_Mysterybox/updHadiahALS') ?>',
               type        : 'POST',
               data        : new FormData(this),
               processData : false,
