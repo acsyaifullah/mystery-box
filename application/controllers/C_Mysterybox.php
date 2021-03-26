@@ -140,7 +140,7 @@ class C_Mysterybox extends CI_Controller
 	// START SPM --------------------------------------------
 	public function indexSPM()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_spm')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -266,7 +266,7 @@ class C_Mysterybox extends CI_Controller
 	// START BLT --------------------------------------------
 	public function indexBLT()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_blt')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -392,7 +392,7 @@ class C_Mysterybox extends CI_Controller
 	// START NGY --------------------------------------------
 	public function indexNGY()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_ngy')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -518,7 +518,7 @@ class C_Mysterybox extends CI_Controller
 	// START ALS --------------------------------------------
 	public function indexALS()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_als')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -644,7 +644,7 @@ class C_Mysterybox extends CI_Controller
 	// START PLM --------------------------------------------
 	public function indexPLM()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_plm')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -770,7 +770,7 @@ class C_Mysterybox extends CI_Controller
 	// START KDR --------------------------------------------
 	public function indexKDR()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_kdr')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -896,7 +896,7 @@ class C_Mysterybox extends CI_Controller
 	// START SMG --------------------------------------------
 	public function indexSMG()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_smg')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
@@ -1022,7 +1022,7 @@ class C_Mysterybox extends CI_Controller
 	// START PDM --------------------------------------------
 	public function indexPDM()
 	{
-		$query1 = $this->db->get('tb_hadiah')->result_array();
+		$query1 = $this->db->get('tb_hadiah_pdm')->result_array();
 
 		$hadiah = [];
 		foreach ($query1 as $query) {
