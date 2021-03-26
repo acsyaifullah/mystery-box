@@ -62,11 +62,12 @@
 
             <?php 
               foreach ($hadiah as $value) { 
+                $randRow = rand(0,9999); 
                 // for ($i=1; $i <= $value['jumlah'] ; $i++) { 
                 //   if ($i <= $value['jumlah']) {
             ?>
             
-            <div class="col-md-3 col-sm-6 grid-margin">
+            <div class="col-md-3 col-sm-6 grid-margin row<?php echo $randRow ?>">
               <div class="card">
                 <div class="card-body">
                   <div class="row">
@@ -74,9 +75,9 @@
                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                       <div class="wrapper text-center">
                         <!-- <h4 class="card-title">Pilih Mystery Gift !</h4> -->
-                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $value['idhadiah'] ?>"></p>
+                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/BLT/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p>
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
-                        <span id="span<?php echo $value['idhadiah'] ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>')" id="btn<?php echo $value['idhadiah'] ?>">Buka Box !</button></span>
+                        <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span>
                       </div>
                     </div>
                     
@@ -110,7 +111,7 @@
   
 
   <script type="text/javascript">
-      function suwal(id) {
+      function suwal(id, randRow) {
         $.ajax({
             method  : 'POST',
             dataType: 'json',
@@ -121,33 +122,34 @@
                 Swal.fire({
                   title: 'Selamat Emdeers, kamu dapat ...',
                   text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.gambar,
+                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/BLT/'+prize.gambar,
                   imageWidth: 250,
                   imageHeight: 250,
                   confirmButtonColor: '#3085d6',
                   confirmButtonText: 'Ok'
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    $("#mb"+prize.idhadiah).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.gambar);
-                    $("#btn"+prize.idhadiah).hide();
-                    $("#span"+prize.idhadiah).append('<h4>'+prize.nama_hadiah+'</h4>');
+                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/BLT/'+prize.gambar);
+                    $("#btn"+randRow).hide();
+                    $("#span"+randRow).append('<h4>'+prize.nama_hadiah+'</h4>');
                   }
                 });
                 minKuota(prize.idhadiah);
+                console.log(randRow);
               } else {
                 Swal.fire({
                   title: 'Yaah, Hadiah ini habis ...',
                   text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/mb.png',
+                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/BLT/mb.png',
                   imageWidth: 250,
                   imageHeight: 250,
                   confirmButtonColor: '#3085d6',
                   confirmButtonText: 'Ok'
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    $("#mb"+prize.idhadiah).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/mb.png');
-                    $("#btn"+prize.idhadiah).hide();
-                    $("#span"+prize.idhadiah).append('<h4>Hadiah ini habis</h4>');
+                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/BLT/mb.png');
+                    $("#btn"+randRow).hide();
+                    $("#span"+randRow).append('<h4>Hadiah ini habis</h4>');
                   }
                 });
               }

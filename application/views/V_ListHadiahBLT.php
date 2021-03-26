@@ -72,7 +72,7 @@
                             ?>
                           </td>
                           <td><?php echo $value->jumlah ?></td>
-                          <td><img class="imghadiah" src="<?php echo base_url('/assets/images/hadiah/'.$value->gambar); ?>"></td>
+                          <td><img class="imghadiah" src="<?php echo base_url('/assets/images/hadiah/BLT/'.$value->gambar); ?>"></td>
                           <td>
                             <a style="color: black" class="btn btn-warning upd" data-toggle="modal" data-target="#updHadiah"
                             data-idhadiah="<?php echo $value->idhadiah; ?>"
@@ -259,7 +259,7 @@
           $(".idhadiah").val($(this).data('idhadiah'));
           $(".nama_hadiah").val($(this).data('namahadiah'));
           $(".jumlah").val($(this).data('jumlah'));
-          $(".gambar").attr('src', '<?php echo base_url("assets/images/hadiah/") ?>'+$(this).data('gambar'));
+          $(".gambar").attr('src', '<?php echo base_url("assets/images/hadiah/BLT/") ?>'+$(this).data('gambar'));
       });
 
       $('#formUpdHadiah').submit(function(e){
