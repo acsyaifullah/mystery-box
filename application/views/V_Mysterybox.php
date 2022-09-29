@@ -33,14 +33,34 @@
       background-color: transparent;
     }
     .page-body-wrapper {
-       background-color: transparent;!important;
+       background-color: transparent!important;
     }
     body {
-      background: url("<?php echo base_url(); ?>/assets/images/hadiah/bg.png") no-repeat center center fixed;
+      background: url("<?php echo base_url(); ?>/assets/images/hadiah/background.jpg") no-repeat center center fixed;
+      /*background: url("https://i.gifer.com/U57E.gif") no-repeat center center fixed;*/
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+    }
+    .bg-trans {
+      border : none;
+      background: none;
+      background-color: transparent!important;
+      border-color: transparent!important;
+      outline: none!important;
+    }
+    h4 {
+     font-family: "Brittany Signature";
+     font-weight: 450;
+     font-size: 30px;
+     line-height: 1.4em;
+     color: white;
+    }
+    #swal2-content {
+      font-family: "Brittany Signature";
+      font-size: 30px;
+      color: orange;
     }
   </style>
 </head>
@@ -57,11 +77,11 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 100px;">
+        <div class="content-wrapper" style="padding-top: 200px;">
           <div class="row">
 
             <?php 
-              foreach ($hadiah as $value) { 
+              foreach ($hadiah as $key => $value) { 
                 $randRow = rand(0,9999); 
                 // for ($i=1; $i <= $value['jumlah'] ; $i++) { 
                 //   if ($i <= $value['jumlah']) {
@@ -75,9 +95,11 @@
                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                       <div class="wrapper text-center">
                         <!-- <h4 class="card-title">Pilih Mystery Gift !</h4> -->
-                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p>
+                        <p class="card-description"><img src="" width="250px" id="mb<?php echo $randRow ?>"></p>
+                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/planet<?= $key ?>.png" width="250px" id="mb<?php echo $randRow ?>"></button></span>
+                        <!-- <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p> -->
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
-                        <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span>
+                        <!-- <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span> -->
                       </div>
                     </div>
                     
@@ -110,7 +132,7 @@
   <!-- container-scroller -->
   
 
-  <script type="text/javascript">
+  <script type="text/javascript">      
       function suwal(id, randRow) {
         $.ajax({
             method  : 'POST',
@@ -118,41 +140,77 @@
             data    : {id : id},
             url     : "<?php echo base_url('C_Mysterybox/getHadiah'); ?>",
             success : function(prize) {
-              if (prize.jumlah > 0) {
-                Swal.fire({
-                  title: 'Selamat Emdeers, kamu dapat ...',
-                  text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.gambar,
-                  imageWidth: 250,
-                  imageHeight: 250,
-                  confirmButtonColor: '#3085d6',
-                  confirmButtonText: 'Ok'
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.gambar);
-                    $("#btn"+randRow).hide();
-                    $("#span"+randRow).append('<h4>'+prize.nama_hadiah+'</h4>');
+              if (prize.status == 1) {
+                  if (prize.data.idhadiah!=16 && prize.data.jumlah > 0) {
+                    Swal.fire({
+                      // title: 'Selamat Emdeers, kamu dapat ...',
+                      text: prize.data.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar,
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Simpan'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
+                        $("#btn"+randRow).hide();
+                        $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
+                      }
+                    });
+                    minKuota(prize.data.idhadiah);
+                    console.log(randRow);
+                  } else if(prize.data.idhadiah==16 && prize.data.jumlah > 0) {
+                    Swal.fire({
+                      title: 'Sayang sekali, ',
+                      text: prize.data.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar,
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Keluar'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
+                        $("#btn"+randRow).hide();
+                        $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
+                      }
+                    });
+                    minKuota(prize.data.idhadiah);
+                  } else {
+                    Swal.fire({
+                      title: 'Sayang sekali, disini kosong ...',
+                      // text: prize.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/mb.png',
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Ok'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/mb.png');
+                        $("#btn"+randRow).hide();
+                        $("#span"+randRow).append('<h4>Belum beruntung</h4>');
+                      }
+                    });
                   }
-                });
-                minKuota(prize.idhadiah);
-                console.log(randRow);
-              } else {
+              }else{
                 Swal.fire({
-                  title: 'Yaah, Hadiah ini habis ...',
-                  text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/mb.png',
-                  imageWidth: 250,
-                  imageHeight: 250,
-                  confirmButtonColor: '#3085d6',
-                  confirmButtonText: 'Ok'
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/mb.png');
-                    $("#btn"+randRow).hide();
-                    $("#span"+randRow).append('<h4>Hadiah ini habis</h4>');
-                  }
-                });
+                      title: 'Sayang sekali, disini kosong ...',
+                      // text: prize.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/mb.png',
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Ok'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/mb.png');
+                        $("#btn"+randRow).hide();
+                        $("#span"+randRow).append('<h4>Belum beruntung</h4>');
+                      }
+                    });
               }
+              
             }
         });
 
