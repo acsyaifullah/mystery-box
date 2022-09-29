@@ -24,9 +24,6 @@
     .swal2-title {
       font-size: 15px!important;
     }
-    .swal2-content {
-      font-size: 25px!important;
-    }
     .card {
       min-height: 287px;
       border: none;
@@ -58,9 +55,9 @@
      color: white;
     }
     #swal2-content {
-      font-family: "Brittany Signature";
-      font-size: 30px;
-      color: orange;
+      /*font-family: "Brittany Signature";*/
+      font-size: 20px;
+      /*color: orange;*/
     }
   </style>
 </head>
@@ -77,7 +74,8 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 200px;">
+        <button class="btn btn-outline-info" onclick="swlinfo()">info</button>
+        <div class="content-wrapper" style="padding-top: 185px;">
           <div class="row">
 
             <?php 
@@ -112,6 +110,7 @@
               }
             // }} 
             ?>
+
             
           </div>
         </div>
@@ -133,6 +132,18 @@
   
 
   <script type="text/javascript">      
+      function swlinfo() {
+        Swal.fire({
+          title: 'Info ...',
+          text: "gambar aja disini",
+          // imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar,
+          imageWidth: 250,
+          imageHeight: 250,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Tutup'
+        })
+      }
+
       function suwal(id, randRow) {
         $.ajax({
             method  : 'POST',
