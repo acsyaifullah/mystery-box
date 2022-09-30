@@ -48,9 +48,9 @@
       outline: none!important;
     }
     h4 {
-     font-family: "Brittany Signature";
-     font-weight: 450;
-     font-size: 30px;
+     /*font-family: "Brittany Signature";*/
+     /*font-weight: 450;*/
+     /*font-size: 30px;*/
      line-height: 1.4em;
      color: white;
     }
@@ -75,7 +75,7 @@
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
         <button class="btn btn-outline-info" onclick="swlinfo()">info</button>
-        <div class="content-wrapper" style="padding-top: 185px;">
+        <div class="content-wrapper" style="padding-top: 280px;">
           <div class="row">
 
             <?php 
@@ -155,70 +155,78 @@
                   if (prize.data.idhadiah!=16 && prize.data.jumlah > 0) {
                     Swal.fire({
                       // title: 'Selamat Emdeers, kamu dapat ...',
-                      text: prize.data.nama_hadiah,
+                      // text: prize.data.nama_hadiah,
                       imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar,
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Simpan'
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
-                        $("#btn"+randRow).hide();
-                        $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
-                      }
+                    }).then(function(){ 
+                        location.reload();
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
+                    //   }
                     });
                     minKuota(prize.data.idhadiah);
                     console.log(randRow);
                   } else if(prize.data.idhadiah==16 && prize.data.jumlah > 0) {
                     Swal.fire({
-                      title: 'Sayang sekali, ',
-                      text: prize.data.nama_hadiah,
+                      // title: 'Sayang sekali, ',
+                      // text: prize.data.nama_hadiah,
                       imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar,
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Keluar'
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
-                        $("#btn"+randRow).hide();
-                        $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
-                      }
+                    }).then(function(){ 
+                        location.reload();
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
+                    //   }
                     });
                     minKuota(prize.data.idhadiah);
                   } else {
                     Swal.fire({
-                      title: 'Sayang sekali, disini kosong ...',
+                      // title: 'Sayang sekali, disini kosong ...',
                       // text: prize.nama_hadiah,
-                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/mb.png',
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/sorry.png',
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Ok'
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/mb.png');
-                        $("#btn"+randRow).hide();
-                        $("#span"+randRow).append('<h4>Belum beruntung</h4>');
-                      }
+                    }).then(function(){ 
+                        location.reload();
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>Sorry ..</h4>');
+                    //   }
                     });
                   }
               }else{
                 Swal.fire({
-                      title: 'Sayang sekali, disini kosong ...',
+                      // title: 'Sayang sekali, disini kosong ...',
                       // text: prize.nama_hadiah,
-                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/mb.png',
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/sorry.png',
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Ok'
-                    }).then((result) => {
-                      if (result.isConfirmed) {
-                        $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/mb.png');
-                        $("#btn"+randRow).hide();
-                        $("#span"+randRow).append('<h4>Belum beruntung</h4>');
-                      }
+                    }).then(function(){ 
+                        location.reload();
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>Sorry ..</h4>');
+                    //   }
                     });
               }
               
