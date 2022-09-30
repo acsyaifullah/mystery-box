@@ -143,9 +143,9 @@
         Swal.fire({
           title: 'Kuota kesempatan ...',
           // text: "gambar aja disini",
-          imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/quota.jpg',
-          imageWidth: 400,
-          imageHeight: 200,
+          imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/kuota.png',
+          imageWidth: 381,
+          imageHeight: 381,
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'Tutup'
         })
