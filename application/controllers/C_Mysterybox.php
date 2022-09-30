@@ -812,9 +812,22 @@ class C_Mysterybox extends CI_Controller
 			for($i=0;$i<4;$i++) {
 					$newhadiah[] = $hadiah[$i];
 			}
-		} else {
+		} else { 
 			// $newhadiah = $hadiah;
-			$newhadiah = $this->db->order_by('idhadiah', 'RANDOM')->get('tb_hadiah_kdr')->result_array();
+			$newhadiah = [];
+			for($i=0;$i<4;$i++) {
+					if (isset($hadiah[$i])) {
+						$newhadiah[] = $hadiah[$i];
+					}else{
+						$newhadiah[] = [
+							'idhadiah'	=> 999,
+							'nama'		=> "",
+							'jumlah'	=> 0
+						];
+					}
+			}
+
+			shuffle($newhadiah);
 		}
 
 		$data['hadiah'] = $newhadiah;
@@ -825,8 +838,18 @@ class C_Mysterybox extends CI_Controller
 	public function getHadiahKDR()
 	{
 		$id 	= $_POST['id'];
-		$data	= $this->db->get_where('tb_hadiah_kdr', ['idhadiah' => $id])->row();
-		echo json_encode($data);
+		$data = [];
+		if ($id == 999) {
+			$status = 0;
+		}else{
+			$data	= $this->db->get_where('tb_hadiah_kdr', ['idhadiah' => $id])->row();
+			$status = 1;
+		}
+		
+		echo json_encode([
+			'status' => $status,
+			'data' => $data
+			]);
 	}
 
 	public function minKuotaKDR()
