@@ -15,6 +15,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/loader.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url(); ?>/assets/images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
@@ -63,6 +64,11 @@
 </head>
 
 <body>
+  <!-- loader -->
+  <div class="loader" style="display: none">
+    <div class="planet" style="position: center"></div>
+  </div>
+  <!-- end loader -->
   <div class="container-scroller">
     <!-- partial:assets/partials/_horizontal-navbar.html -->
 
@@ -74,7 +80,7 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <button class="btn btn-outline-info" onclick="swlinfo()">info</button>
+        <button class="btn btn-outline-info btn-sm" onclick="swlinfo()">info</button>
         <div class="content-wrapper" style="padding-top: 280px;">
           <div class="row">
 
@@ -114,6 +120,7 @@
             
           </div>
         </div>
+
         <!-- content-wrapper ends -->
         <!-- partial:assets/partials/_footer.html -->
         <!-- <footer class="footer">
@@ -134,11 +141,11 @@
   <script type="text/javascript">      
       function swlinfo() {
         Swal.fire({
-          title: 'Info ...',
-          text: "gambar aja disini",
-          // imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar,
-          imageWidth: 250,
-          imageHeight: 250,
+          title: 'Kuota kesempatan ...',
+          // text: "gambar aja disini",
+          imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/quota.jpg',
+          imageWidth: 400,
+          imageHeight: 200,
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'Tutup'
         })
@@ -160,9 +167,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Simpan'
+                      confirmButtonText: 'Keluar'
                     }).then(function(){ 
                         location.reload();
+                        $(".loader").show();
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
@@ -181,8 +189,9 @@
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Keluar'
-                    }).then(function(){ 
+                    }).then(function(){
                         location.reload();
+                        $(".loader").show();
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
@@ -199,9 +208,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Ok'
+                      confirmButtonText: 'Keluar'
                     }).then(function(){ 
                         location.reload();
+                        $(".loader").show();
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
@@ -218,9 +228,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Ok'
+                      confirmButtonText: 'Keluar'
                     }).then(function(){ 
                         location.reload();
+                        $(".loader").show();
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
