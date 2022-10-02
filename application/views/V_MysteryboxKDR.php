@@ -80,7 +80,7 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahKDR" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 180px;">
+        <div class="content-wrapper" style="padding-top: 300px;">
           <div class="row">
 
             <?php 
