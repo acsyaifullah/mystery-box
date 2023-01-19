@@ -224,8 +224,18 @@ class C_Mysterybox extends CI_Controller
 	public function getHadiahSPM()
 	{
 		$id 	= $_POST['id'];
-		$data	= $this->db->get_where('tb_hadiah_spm', ['idhadiah' => $id])->row();
-		echo json_encode($data);
+		$data = [];
+		if ($id == 999) {
+			$status = 0;
+		}else{
+			$data	= $this->db->get_where('tb_hadiah_spm', ['idhadiah' => $id])->row();
+			$status = 1;
+		}
+		
+		echo json_encode([
+			'status' => $status,
+			'data' => $data
+			]);
 	}
 
 	public function minKuotaSPM()
@@ -364,8 +374,18 @@ class C_Mysterybox extends CI_Controller
 	public function getHadiahBLT()
 	{
 		$id 	= $_POST['id'];
-		$data	= $this->db->get_where('tb_hadiah_blt', ['idhadiah' => $id])->row();
-		echo json_encode($data);
+		$data = [];
+		if ($id == 999) {
+			$status = 0;
+		}else{
+			$data	= $this->db->get_where('tb_hadiah_blt', ['idhadiah' => $id])->row();
+			$status = 1;
+		}
+		
+		echo json_encode([
+			'status' => $status,
+			'data' => $data
+			]);
 	}
 
 	public function minKuotaBLT()
