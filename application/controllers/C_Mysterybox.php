@@ -9,6 +9,23 @@ class C_Mysterybox extends CI_Controller
 		$this->load->model('M_Mysterybox', 'mod');
 	}
 
+	public function indexTTS()
+	{
+		$this->load->view('V_TTS');
+	}
+	public function tts1()
+	{
+		$this->load->view('tts1');
+	}
+	public function tts2()
+	{
+		$this->load->view('tts2');
+	}
+	public function tts3()
+	{
+		$this->load->view('tts3');
+	}
+
 	// START MG --------------------------------------------
 	public function index()
 	{
