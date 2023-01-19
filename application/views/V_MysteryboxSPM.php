@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Emdee Mystery Gift</title>
+  <title>Emdee Fortune Cookie</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/vendors/css/vendor.bundle.base.css">
@@ -24,23 +24,40 @@
     .swal2-title {
       font-size: 15px!important;
     }
-    .swal2-content {
-      font-size: 25px!important;
-    }
     .card {
       min-height: 287px;
       border: none;
       background-color: transparent;
     }
     .page-body-wrapper {
-       background-color: transparent;!important;
+       background-color: transparent!important;
     }
     body {
-      background: url("<?php echo base_url(); ?>/assets/images/hadiah/bg.png") no-repeat center center fixed;
+      background: url("<?php echo base_url(); ?>/assets/images/hadiah/background.jpg") no-repeat center center fixed;
+      /*background: url("https://i.gifer.com/U57E.gif") no-repeat center center fixed;*/
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+    }
+    .bg-trans {
+      border : none;
+      background: none;
+      background-color: transparent!important;
+      border-color: transparent!important;
+      outline: none!important;
+    }
+    h4 {
+     /*font-family: "Brittany Signature";*/
+     /*font-weight: 450;*/
+     /*font-size: 30px;*/
+     line-height: 1.4em;
+     color: white;
+    }
+    #swal2-content {
+      /*font-family: "Brittany Signature";*/
+      font-size: 20px;
+      /*color: orange;*/
     }
   </style>
 </head>
@@ -57,17 +74,17 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahSPM" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 100px;">
+        <div class="content-wrapper" style="padding-top: 180px;">
           <div class="row">
 
             <?php 
-              foreach ($hadiah as $value) { 
+              foreach ($hadiah as $key => $value) { 
                 $randRow = rand(0,9999); 
                 // for ($i=1; $i <= $value['jumlah'] ; $i++) { 
                 //   if ($i <= $value['jumlah']) {
             ?>
             
-            <div class="col-md-3 col-sm-6 grid-margin row<?php echo $randRow ?>">
+            <div class="col-md-4 col-sm-6 grid-margin row<?php echo $randRow ?>">
               <div class="card">
                 <div class="card-body">
                   <div class="row">
@@ -75,9 +92,14 @@
                     <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                       <div class="wrapper text-center">
                         <!-- <h4 class="card-title">Pilih Mystery Gift !</h4> -->
-                        <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/SPM/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p>
+                        <p class="card-description"><img src="" width="250px" id="mb<?php echo $randRow ?>"></p>
+                        <!-- kalau mau beda2 gambar depan -->
+                        <!-- <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/planet<?= $key ?>.png" width="250px" id="mb<?php echo $randRow ?>"></button></span> -->
+                        <!-- end kalau mau beda2 gambar depan -->
+                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/SPM/Closed.png" width="250px" id="mb<?php echo $randRow ?>"></button></span>
+                        <!-- <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p> -->
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
-                        <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span>
+                        <!-- <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span> -->
                       </div>
                     </div>
                     
@@ -90,6 +112,7 @@
               }
             // }} 
             ?>
+
             
           </div>
         </div>
@@ -108,9 +131,20 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  
 
-  <script type="text/javascript">
+  <script type="text/javascript">      
+      function swlinfo() {
+        Swal.fire({
+          title: 'Kuota kesempatan ...',
+          // text: "gambar aja disini",
+          imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/kuota.png',
+          imageWidth: 381,
+          imageHeight: 381,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Tutup'
+        })
+      }
+
       function suwal(id, randRow) {
         $.ajax({
             method  : 'POST',
@@ -118,41 +152,89 @@
             data    : {id : id},
             url     : "<?php echo base_url('C_Mysterybox/getHadiahSPM'); ?>",
             success : function(prize) {
-              if (prize.jumlah > 0) {
-                Swal.fire({
-                  title: 'Selamat Emdeers, kamu dapat ...',
-                  text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/'+prize.gambar,
-                  imageWidth: 250,
-                  imageHeight: 250,
-                  confirmButtonColor: '#3085d6',
-                  confirmButtonText: 'Ok'
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/SPM/'+prize.gambar);
-                    $("#btn"+randRow).hide();
-                    $("#span"+randRow).append('<h4>'+prize.nama_hadiah+'</h4>');
+              if (prize.status == 1) {
+                  if (prize.data.idhadiah!=16 && prize.data.jumlah > 0) {
+                    Swal.fire({
+                      // title: 'Selamat Emdeers, kamu dapat ...',
+                      // text: prize.data.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/'+prize.data.gambar,
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Tutup'
+                    }).then(function(){ 
+                        location.reload();
+                        // $(".loader").show(); //loader aja
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
+                    //   }
+                    });
+                    minKuota(prize.data.idhadiah);
+                    console.log(randRow);
+                  } else if(prize.data.idhadiah==16 && prize.data.jumlah > 0) {
+                    Swal.fire({
+                      // title: 'Sayang sekali, ',
+                      // text: prize.data.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/'+prize.data.gambar,
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Tutup'
+                    }).then(function(){
+                        location.reload();
+                        // $(".loader").show(); //loader aja
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>'+prize.data.nama_hadiah+'</h4>');
+                    //   }
+                    });
+                    minKuota(prize.data.idhadiah);
+                  } else {
+                    Swal.fire({
+                      // title: 'Sayang sekali, disini kosong ...',
+                      // text: prize.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/sorry.png',
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Tutup'
+                    }).then(function(){ 
+                        location.reload();
+                        // $(".loader").show(); // loader aja
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>Sorry ..</h4>');
+                    //   }
+                    });
                   }
-                });
-                minKuota(prize.idhadiah);
-                console.log(randRow);
-              } else {
+              }else{
                 Swal.fire({
-                  title: 'Yaah, Hadiah ini habis ...',
-                  text: prize.nama_hadiah,
-                  imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/mb.png',
-                  imageWidth: 250,
-                  imageHeight: 250,
-                  confirmButtonColor: '#3085d6',
-                  confirmButtonText: 'Ok'
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/SPM/mb.png');
-                    $("#btn"+randRow).hide();
-                    $("#span"+randRow).append('<h4>Hadiah ini habis</h4>');
-                  }
-                });
+                      // title: 'Sayang sekali, disini kosong ...',
+                      // text: prize.nama_hadiah,
+                      imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/SPM/sorry.png',
+                      imageWidth: 250,
+                      imageHeight: 250,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Tutup'
+                    }).then(function(){ 
+                        location.reload();
+                        // $(".loader").show(); // loader aja
+                    // then((result) => {
+                    //   if (result.isConfirmed) {
+                    //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
+                    //     $("#btn"+randRow).hide();
+                    //     // $("#span"+randRow).append('<h4>Sorry ..</h4>');
+                    //   }
+                    });
               }
+              
             }
         });
 
@@ -182,6 +264,7 @@
         });
       }
   </script>
+  
   <!-- plugins:js -->
   <script src="<?php echo base_url(); ?>/assets/vendors/js/vendor.bundle.base.js"></script>
   <script src="<?php echo base_url(); ?>/assets/vendors/js/vendor.bundle.addons.js"></script>

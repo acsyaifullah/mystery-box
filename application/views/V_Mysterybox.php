@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Emdee Mystery Gift</title>
+  <title>Emdee Fortune Cookie</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/vendors/css/vendor.bundle.base.css">
@@ -15,7 +15,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/loader.css">
+  <!-- <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/loader.css"> --> 
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url(); ?>/assets/images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
@@ -65,9 +65,9 @@
 
 <body>
   <!-- loader -->
-  <div class="loader" style="display: none">
+  <!-- <div class="loader" style="display: none">
     <div class="planet" style="position: center"></div>
-  </div>
+  </div> -->
   <!-- end loader -->
   <div class="container-scroller">
     <!-- partial:assets/partials/_horizontal-navbar.html -->
@@ -81,7 +81,7 @@
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
         <!-- <button class="btn btn-outline-info btn-sm" onclick="swlinfo()">info</button>-->
-        <div class="content-wrapper" style="padding-top: 200px;"> 
+        <div class="content-wrapper" style="padding-top: 180px;"> 
           <div class="row">
 
             <?php 
@@ -91,7 +91,7 @@
                 //   if ($i <= $value['jumlah']) {
             ?>
             
-            <div class="col-md-3 col-sm-6 grid-margin row<?php echo $randRow ?>">
+            <div class="col-md-4 col-sm-6 grid-margin row<?php echo $randRow ?>">
               <div class="card">
                 <div class="card-body">
                   <div class="row">
@@ -100,7 +100,10 @@
                       <div class="wrapper text-center">
                         <!-- <h4 class="card-title">Pilih Mystery Gift !</h4> -->
                         <p class="card-description"><img src="" width="250px" id="mb<?php echo $randRow ?>"></p>
-                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/planet<?= $key ?>.png" width="250px" id="mb<?php echo $randRow ?>"></button></span>
+                        <!-- kalau mau beda2 gambar depan -->
+                        <!-- <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/planet<?= $key ?>.png" width="250px" id="mb<?php echo $randRow ?>"></button></span> -->
+                        <!-- end kalau mau beda2 gambar depan -->
+                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/Closed.png" width="250px" id="mb<?php echo $randRow ?>"></button></span>
                         <!-- <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p> -->
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
                         <!-- <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span> -->
@@ -167,10 +170,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Keluar'
+                      confirmButtonText: 'Tutup'
                     }).then(function(){ 
                         location.reload();
-                        $(".loader").show();
+                        // $(".loader").show(); //loader aja
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
@@ -188,10 +191,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Keluar'
+                      confirmButtonText: 'Tutup'
                     }).then(function(){
                         location.reload();
-                        $(".loader").show();
+                        // $(".loader").show(); //loader aja
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/'+prize.data.gambar);
@@ -208,10 +211,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Keluar'
+                      confirmButtonText: 'Tutup'
                     }).then(function(){ 
                         location.reload();
-                        $(".loader").show();
+                        // $(".loader").show(); // loader aja
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');
@@ -228,10 +231,10 @@
                       imageWidth: 250,
                       imageHeight: 250,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Keluar'
+                      confirmButtonText: 'Tutup'
                     }).then(function(){ 
                         location.reload();
-                        $(".loader").show();
+                        // $(".loader").show(); // loader aja
                     // then((result) => {
                     //   if (result.isConfirmed) {
                     //     $("#mb"+randRow).attr('src','<?php echo base_url(); ?>/assets/images/hadiah/sorry.png');

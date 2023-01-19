@@ -41,17 +41,17 @@ class C_Mysterybox extends CI_Controller
 				];
 			}
 		}
-		if (count($hadiah) > 3) {
+		if (count($hadiah) > 2) {
 			shuffle($hadiah);
 			$newhadiah = [];
-			for($i=0;$i<4;$i++) {
+			for($i=0;$i<3;$i++) {
 					$newhadiah[] = $hadiah[$i];
 			}
 		} else {
 			// $newhadiah = $hadiah;
 			// $newhadiah = $this->db->limit(4)->order_by('idhadiah', 'RANDOM')->get('tb_hadiah')->result_array();
 			$newhadiah = [];
-			for($i=0;$i<4;$i++) {
+			for($i=0;$i<3;$i++) {
 					if (isset($hadiah[$i])) {
 						$newhadiah[] = $hadiah[$i];
 					}else{
@@ -191,15 +191,29 @@ class C_Mysterybox extends CI_Controller
 				];
 			}
 		}
-		if (count($hadiah) > 3) {
+		if (count($hadiah) > 2) {
 			shuffle($hadiah);
 			$newhadiah = [];
-			for($i=0;$i<4;$i++) {
+			for($i=0;$i<3;$i++) {
 					$newhadiah[] = $hadiah[$i];
 			}
 		} else {
 			// $newhadiah = $hadiah;
-			$newhadiah = $this->db->order_by('idhadiah', 'RANDOM')->get('tb_hadiah_spm')->result_array();
+			// $newhadiah = $this->db->limit(4)->order_by('idhadiah', 'RANDOM')->get('tb_hadiah')->result_array();
+			$newhadiah = [];
+			for($i=0;$i<3;$i++) {
+					if (isset($hadiah[$i])) {
+						$newhadiah[] = $hadiah[$i];
+					}else{
+						$newhadiah[] = [
+							'idhadiah'	=> 999,
+							'nama'		=> "",
+							'jumlah'	=> 0
+						];
+					}
+			}
+
+			shuffle($newhadiah);
 		}
 
 		$data['hadiah'] = $newhadiah;
@@ -317,15 +331,29 @@ class C_Mysterybox extends CI_Controller
 				];
 			}
 		}
-		if (count($hadiah) > 3) {
+		if (count($hadiah) > 2) {
 			shuffle($hadiah);
 			$newhadiah = [];
-			for($i=0;$i<4;$i++) {
+			for($i=0;$i<3;$i++) {
 					$newhadiah[] = $hadiah[$i];
 			}
 		} else {
 			// $newhadiah = $hadiah;
-			$newhadiah = $this->db->order_by('idhadiah', 'RANDOM')->get('tb_hadiah_blt')->result_array();
+			// $newhadiah = $this->db->limit(4)->order_by('idhadiah', 'RANDOM')->get('tb_hadiah')->result_array();
+			$newhadiah = [];
+			for($i=0;$i<3;$i++) {
+					if (isset($hadiah[$i])) {
+						$newhadiah[] = $hadiah[$i];
+					}else{
+						$newhadiah[] = [
+							'idhadiah'	=> 999,
+							'nama'		=> "",
+							'jumlah'	=> 0
+						];
+					}
+			}
+
+			shuffle($newhadiah);
 		}
 
 		$data['hadiah'] = $newhadiah;
