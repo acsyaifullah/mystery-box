@@ -74,7 +74,7 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahSPM" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 180px;">
+        <div class="content-wrapper" style="padding-top: 250px;">
           <div class="row">
 
             <?php 
@@ -96,7 +96,7 @@
                         <!-- kalau mau beda2 gambar depan -->
                         <!-- <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/planet<?= $key ?>.png" width="250px" id="mb<?php echo $randRow ?>"></button></span> -->
                         <!-- end kalau mau beda2 gambar depan -->
-                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/SPM/Closed.png" width="250px" id="mb<?php echo $randRow ?>"></button></span>
+                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/SPM/Closed.png" width="350px" id="mb<?php echo $randRow ?>"></button></span>
                         <!-- <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p> -->
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
                         <!-- <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span> -->
