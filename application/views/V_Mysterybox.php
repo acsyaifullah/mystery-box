@@ -80,8 +80,8 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahMG" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <button class="btn btn-outline-info btn-sm" onclick="swlinfo()">info</button>
-        <div class="content-wrapper" style="padding-top: 400px;">
+        <!-- <button class="btn btn-outline-info btn-sm" onclick="swlinfo()">info</button>-->
+        <div class="content-wrapper" style="padding-top: 200px;"> 
           <div class="row">
 
             <?php 

@@ -9,6 +9,7 @@ class C_Mysterybox extends CI_Controller
 		$this->load->model('M_Mysterybox', 'mod');
 	}
 
+	// TTS GATHERING
 	public function indexTTS()
 	{
 		$this->load->view('V_TTS');
@@ -21,10 +22,7 @@ class C_Mysterybox extends CI_Controller
 	{
 		$this->load->view('tts2');
 	}
-	public function tts3()
-	{
-		$this->load->view('tts3');
-	}
+	// END TTS GATHERING
 
 	// START MG --------------------------------------------
 	public function index()
