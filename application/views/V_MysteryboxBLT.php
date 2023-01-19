@@ -74,7 +74,7 @@
         <div align="center" style="padding-top: 0px">
           <a href="<?php echo base_url(); ?>/C_Mysterybox/listHadiahBLT" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         </div>
-        <div class="content-wrapper" style="padding-top: 250px;">
+        <div class="content-wrapper" style="padding-top: 220px;">
           <div class="row">
 
             <?php 
@@ -96,7 +96,7 @@
                         <!-- kalau mau beda2 gambar depan -->
                         <!-- <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/planet<?= $key ?>.png" width="250px" id="mb<?php echo $randRow ?>"></button></span> -->
                         <!-- end kalau mau beda2 gambar depan -->
-                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/BLT/Closed.png" width="350px" id="mb<?php echo $randRow ?>"></button></span>
+                        <span id="span<?php echo $randRow ?>"><button class="btn bg-trans" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>"><img src="<?php echo base_url(); ?>/assets/images/hadiah/BLT/Closed.png" width="320px" id="mb<?php echo $randRow ?>"></button></span>
                         <!-- <p class="card-description"><img src="<?php echo base_url(); ?>/assets/images/hadiah/mb.png" width="250px" id="mb<?php echo $randRow ?>"></p> -->
                         <input type="hidden" class="idhadiah" value="<?php echo $value['idhadiah'] ?>">
                         <!-- <span id="span<?php echo $randRow ?>"><button class="btn btn-outline-danger" onclick="suwal('<?php echo $value['idhadiah'] ?>', '<?php echo $randRow ?>')" id="btn<?php echo $randRow ?>">Buka Box !</button></span> -->
@@ -158,8 +158,8 @@
                       // title: 'Selamat Emdeers, kamu dapat ...',
                       // text: prize.data.nama_hadiah,
                       imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/BLT/'+prize.data.gambar,
-                      imageWidth: 250,
-                      imageHeight: 250,
+                      imageWidth: 320,
+                      imageHeight: 320,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Tutup'
                     }).then(function(){ 
@@ -179,8 +179,8 @@
                       // title: 'Sayang sekali, ',
                       // text: prize.data.nama_hadiah,
                       imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/BLT/'+prize.data.gambar,
-                      imageWidth: 250,
-                      imageHeight: 250,
+                      imageWidth: 320,
+                      imageHeight: 320,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Tutup'
                     }).then(function(){
@@ -199,8 +199,8 @@
                       // title: 'Sayang sekali, disini kosong ...',
                       // text: prize.nama_hadiah,
                       imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/BLT/sorry.png',
-                      imageWidth: 250,
-                      imageHeight: 250,
+                      imageWidth: 320,
+                      imageHeight: 320,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Tutup'
                     }).then(function(){ 
@@ -219,8 +219,8 @@
                       // title: 'Sayang sekali, disini kosong ...',
                       // text: prize.nama_hadiah,
                       imageUrl: '<?php echo base_url(); ?>/assets/images/hadiah/BLT/sorry.png',
-                      imageWidth: 250,
-                      imageHeight: 250,
+                      imageWidth: 320,
+                      imageHeight: 320,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Tutup'
                     }).then(function(){ 
